@@ -5,6 +5,11 @@ button.addEventListener("click", start)
 
 function gamestart() {
     Swal.fire({
+   
+         imageUrl: 'img/icon.png',
+        customClass:{
+            popup:'changebg'
+        },
         title: "EDDIE'S SMALL ENG QUIZ",
         text: 'This is a small eng quiz game aimed to test you some common knowledge in English. There are only five questions in the game, so get ready to start and see how many scores you can get.',
         confirmButtonText: 'START',
@@ -14,6 +19,8 @@ function gamestart() {
         (async () => {
 
             const { value: character } = await Swal.fire({
+                imageUrl: 'img/CHA.png',
+                background:'lightyellow',
                 allowOutsideClick: false,
                 title: 'Select your characters',
                 input: 'select',
@@ -78,6 +85,7 @@ function start() {
         }).then((result) => { //q1 result 
             if (result.isDenied) { // if you pass the q1 go to q2
                 Swal.fire({
+                    allowOutsideClick: false,
                     imageUrl: 'img/friends.gif',
                     title: 'pass',
                     text: 'appointment 通常指的是和某專業人士預約，或是在正式的商業場合。比如和醫生、律師、獸醫等這些具有專業知識的人預約時間，或是和老闆跟客戶有約。date則有男女關係的含意，所以如果你說有date的話，當對方不是男女朋友，就代表案情不單純囉XD。meet則是非常口語的用法，表示和朋友有約，常聽到的表示方法就是:I am meeting my friend today.(我今天和朋友有約)',
@@ -105,7 +113,6 @@ function start() {
                                 text: '冰棒這個字呢其實叫做popsicle，別再亂說什麼ice stick和ice bar了，其實popsicle是一個商標的名稱，美國人很喜歡用一些大品牌的商標名稱來代指該產品，像是white-out(立可白)，scotch tape(透明膠帶)，這些原本都只是該商品名稱，但因為太有名所以直接被拿來指這類的東西。 '
                             }).then(function () {
                                 Swal.fire({
-                                    
                                     title: 'Question 3',
                                     text: 'How do you say "過海關" in English ?',
                                     imageUrl: 'img/customs.gif',
@@ -129,7 +136,6 @@ function start() {
                                         }).then(function () {
                                             Swal.fire({
                                                 title: 'Question 4',
-
                                                 text: 'when do you most likey hear the following sentence ? "Neat or on the rocks?" ',
                                                 imageUrl: 'img/rock.gif',
                                                 confirmButtonText: 'going on a pacnic',
@@ -170,7 +176,9 @@ function start() {
                                                                 Swal.fire({
                                                                     allowOutsideClick: false,
                                                                     imageUrl: 'img/cutapple.gif',
-                                                                    title: 'Sorry about that. You were almost there. Poor you.'
+                                                                    title: 'Oops, you are out.',
+                                                                    text:"That was suck. You were almost there. "
+                                                                    
                                                                 })
                                                             }
                                                             else {
@@ -199,7 +207,9 @@ function start() {
                                         Swal.fire({
                                             allowOutsideClick: false,
                                             imageUrl: 'img/haharock.gif',
-                                            title: 'failed' }) //you failed q4
+                                            title: 'Oops, you are out.',
+                                            text:"Honey~ I am sorry. I know this is kinda hard but you can still restart it : ) "
+                                            }) //you failed q4
                                     }
                                 })
                             })
@@ -207,7 +217,9 @@ function start() {
                             Swal.fire({
                                 allowOutsideClick: false,
                                 imageUrl: 'img/im.gif',
-                                title: 'falied' }) //you failed q3
+                                title: 'Oops, you are out.',
+                                text:'Oh ! Be careful with your grammar next time!' }) //you failed q3
+
                         }
                     })
                             })
@@ -216,7 +228,9 @@ function start() {
                 Swal.fire({ 
                     allowOutsideClick: false,
                     imageUrl: 'img/popsicle01.gif',
-                    title: 'falied' }) // you failed q2
+                    title: 'Oops, you are out.',
+                    text:"Seriously? You don't know the right word? Come on ~"
+                }) // you failed q2
             }
         }))
 })
@@ -225,17 +239,27 @@ function start() {
     Swal.fire({
         allowOutsideClick: false,
         imageUrl: 'img/01.gif',
-        title: 'falied' }) // you failed q1
+        title: 'Oops, you are out.', 
+        text:'You got the wrong answer. I am really sorry for that.'}) // you failed q1
 }
         })
     })
-    
 
 
 
 }
 
-
-
+//function hide(){} 把restart藏起來
+function thide(){
+    // $("#container").hide()
+    var box = document.getElementById("container")
+    box.style.display="hide"
+}
+//function show(){} 當遊戲結束後顯示restart按鈕
+function tshow(){
+    // $("#container").show()
+    var box = document.getElementById("container")
+    box.style.display="block"
+}
 gamestart()
 

@@ -1,7 +1,75 @@
 body{
     text-align: center;
+    background-image: url("img/bg.gif");
+    background-size: cover;
+}
+.container{
+    position: absolute;
+    top:50%;
+    left:50%;
+}
+
+.box{
+    display:block;
+    position: absolute;
+    transform: translate(-50%,-50%);
+   
+}
+
+small{
+    font-family: cursive;
+    font-weight: bolder;
+    font-size: larger;
+    display:block;
+    background:rgb(250, 78, 48);
+    padding:0px;
+    /* border: yellow 3px 0 0 0; */
+
 }
 input{
-    margin:45vh;
-    width:20vw
+    margin:-4px  0;
+    padding: 10px;
+    display:block;
+    font-size: 2rem;
+    background:tomato;
+    /* box-shadow: #000 10px 10px 10px; */
+    border:none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  
+}
+
+/* cover popup animaiton  */
+.changebg{
+    animation:changebg 5s linear infinite;
+}
+@keyframes changebg{
+ 
+    12.5%{
+        background-color: lightpink;
+    }
+    25%{
+        background-color:lightsalmon;
+
+    }
+    37.5%{
+        background-color:rgb(246, 237, 150);
+
+    }
+    50%{
+        background-color:lightgreen;
+
+    }
+    62.5%{
+        background-color:lightskyblue;
+
+    }
+    75%{
+        background-color:slateblue;
+
+    }
+    87.5%{
+        background-color:violet;
+    }
+   
 }
