@@ -1,3 +1,4 @@
+var role
 
 
 var button = document.getElementById("gameStartButton")
@@ -43,29 +44,38 @@ function gamestart() {
             })
 
             if (character === 'Arial') {
-                Swal.fire({ text: `Hi, I am ${character}, and I am glad you choose me because I am a smart and beautiful woman. I can definitely help you win the game.` }).then(start())
+                role = `${character}`
+                Swal.fire({ 
+                    text: `Hi, I am ${character}, and I am glad you choose me because I am a smart and beautiful woman. I can definitely help you win the game.`,
+                    imageUrl: 'img/Arial.gif'
+                     
+             }).then(start)
             } else if (character === 'Benny') {
-                Swal.fire({ text: `Hi, I am ${character}. Bascially, I am a nerd, so I don't really believe I will lose the game.` }).then(start())
+                role = `${character}`
+                Swal.fire({ 
+                    text: `Hi, I am ${character}. Bascially, I am a nerd, so I don't really believe I will lose the game.`,
+                    imageUrl: 'img/Benny.gif'
+                }).then(start)
             } else if (character === 'Unknown') {
-                Swal.fire({ text: `Hello there, I can't tell you my name because I work as a special agent. I have to many secrets, it's better to keep a low profile. Anyway, I am a geninus, you know, so it's kinda impossible for me to lose the game.` }).then(start())
+                role = 'Mysterious Guy'
+                Swal.fire({ 
+                    text: `Hello there, I can't tell you my name because I work as a special agent. I have to many secrets, it's better to keep a low profile. Anyway, I am a geninus, you know, so it's kinda impossible for me to lose the game.`,
+                    imageUrl: 'img/Mysterious Guy.gif',
+                }).then(start)
             }
 
         })()
     })
-
-
-
-
-
-
 
 }
 
 // after setting your name  -> start function 
 // get start from  question 1 
 function start() {
+    
     Swal.fire({
-        title: `Hi,`,
+        title: `Hi, ${role}`,
+        imageUrl: `img/${role}.gif`,
         text: `press "ok" to start the game`,
     }).then(function () {
         Swal.fire({
