@@ -4,6 +4,7 @@ var button = document.getElementById("gameStartButton")
 button.addEventListener("click", start)
 
 function gamestart() {
+    hide()
     Swal.fire({
    
          imageUrl: 'img/icon.png',
@@ -179,7 +180,7 @@ function start() {
                                                                     title: 'Oops, you are out.',
                                                                     text:"That was suck. You were almost there. "
                                                                     
-                                                                })
+                                                                }).then(show)
                                                             }
                                                             else {
                                                                 Swal.fire({ // Mission completed 
@@ -193,7 +194,7 @@ function start() {
                                                                         title: 'Mission Completed',
                                                                         imageUrl: 'img/congra.gif',
                                                                         text: 'congratulation, you past the small quiz, you are really good at English.'
-                                                                    })
+                                                                    }).then(show)
                                                                 })
 
 
@@ -209,7 +210,7 @@ function start() {
                                             imageUrl: 'img/haharock.gif',
                                             title: 'Oops, you are out.',
                                             text:"Honey~ I am sorry. I know this is kinda hard but you can still restart it : ) "
-                                            }) //you failed q4
+                                            }).then(show) //you failed q4
                                     }
                                 })
                             })
@@ -218,7 +219,7 @@ function start() {
                                 allowOutsideClick: false,
                                 imageUrl: 'img/im.gif',
                                 title: 'Oops, you are out.',
-                                text:'Oh ! Be careful with your grammar next time!' }) //you failed q3
+                                text:'Oh ! Be careful with your grammar next time!' }).then(show) //you failed q3
 
                         }
                     })
@@ -230,7 +231,7 @@ function start() {
                     imageUrl: 'img/popsicle01.gif',
                     title: 'Oops, you are out.',
                     text:"Seriously? You don't know the right word? Come on ~"
-                }) // you failed q2
+                }).then(show) // you failed q2
             }
         }))
 })
@@ -240,7 +241,7 @@ function start() {
         allowOutsideClick: false,
         imageUrl: 'img/01.gif',
         title: 'Oops, you are out.', 
-        text:'You got the wrong answer. I am really sorry for that.'}) // you failed q1
+        text:'You got the wrong answer. I am really sorry for that.'}).then(show) // you failed q1
 }
         })
     })
@@ -250,13 +251,13 @@ function start() {
 }
 
 //function hide(){} 把restart藏起來
-function thide(){
+function hide(){
     // $("#container").hide()
     var box = document.getElementById("container")
-    box.style.display="hide"
+    box.style.display="none"
 }
 //function show(){} 當遊戲結束後顯示restart按鈕
-function tshow(){
+function show(){
     // $("#container").show()
     var box = document.getElementById("container")
     box.style.display="block"

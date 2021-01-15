@@ -8,7 +8,10 @@ body{
     top:50%;
     left:50%;
 }
-
+.box > img{
+    position: absolute;
+    z-index: -1;
+}
 .box{
     display:block;
     position: absolute;
